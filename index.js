@@ -2,6 +2,7 @@ require('colors');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
+const { error } = require('console');
 
 //carpeta o directorio
 //archivo o file esta dentro de el directorio
@@ -55,12 +56,13 @@ const returnOnlyFilesMd = (inputPath) => {
 const readFile = (inputPath) => fs.readFileSync(inputPath, 'utf8');
 //console.log(readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/mas.md'));
 
+///---------------------------
 const findLinks = (content, inputPath) => {
     const regExp = /\[(.+)\]\((https?:\/\/.+)\)/gi;
     let arrayLinks = [...content.matchAll(regExp)]; // spread operator
-    // console.log(arrayLinks)
+    console.log(arrayLinks)
     let arrayObjects = [];
-    // console.log(arrayObjects)
+//    //console.log(arrayObjects)
     for (let i = 0; i < arrayLinks.length; i++) {
       arrayObjects.push({
         href: arrayLinks[i][2],
@@ -69,42 +71,110 @@ const findLinks = (content, inputPath) => {
       });
     }
     return arrayObjects;
-  };
-//console.log(findLinks(readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/README2.md'));
-//console.log(findLinks('README.md'));
-
-const linkValidation = (arr) => {
-  let arrayPromises = [];
-  for (let i = 0; i < arr.length; i++) {
-    const object = arr[i];
-    let links = axios.get(object.href)
-      .then((res) => ({
-        href: res.config.url,
-        text: object.text,
-        file: object.file,
-        status: res.status,
-        message: 'ok',
-      }))
-      .catch((error) => {
-        //console.log(error)
-        if ('response' in error) {
-          return {
-            href: object.href,
-            text: object.text,
-            file: object.file,
-            status: error.response.status,
-            message: 'fail',
-          };
-        }
-      });
-    arrayPromises.push(links);
-  }
-
-  return Promise.all(arrayPromises);
-
 };
+//console.log(findLinks(readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'));
+//console.log(findLinks('README2.md'));
 
 
+//const findLinks = (inputPath) => {
+//    return new Promise ((resolve, reject)=> {
+//    const arrayAllLinks = [];
+//    readFile(inputPath)
+//    .then((file) => {
+//        console.log(file);
+//        const regEx = /\[(.*)\]\(((?:\/|https?:\/\/).*)\)/gi;
+//        let match = regEx.exec(file);
+//        while(match !== null) {
+//            arrayAllLinks.push({
+//                href: match[2],
+//                text: match[1],
+//                file: inputPath,
+//            });
+//            match = regEx.exec(file);
+//        };
+//        resolve(arrayAllLinks)
+//    })
+//    .catch((error) => reject(error));  
+//});
+//};
+
+//console.log(findLinks(readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'));
+//findLinks('README2.md').then(result => console.log (result)).catch(error => console.log(error));
+
+//const linkValidation = (arr) => {
+//  let arrayPromises = [];
+//  for (let i = 0; i < arr.length; i++) {
+//    const object = arr[i];
+//    let links = axios.get(object.href)   
+//      .then((res) => ({
+//        href: res.config.url,
+//        text: object.text,
+//        file: object.file,
+//        status: res.status,
+//        message: 'ok',
+//      }))
+//      .catch((error) => {
+//        //console.log(error)
+//        if ('response' in error) {
+//          return {
+//            href: object.href,
+//            text: object.text,
+//            file: object.file,
+//            status: error.response.status,
+//            message: 'fail',
+//          };
+//        }
+//      });
+//    arrayPromises.push(links);
+//  }
+
+//  return Promise.all(arrayPromises);
+
+//};
+
+
+//console.log(linkValidation('README.md'));
+//linkValidation('./README2.md').then(res => console.log(res));
+//axios('https://www.genbeta.com/desarrollo/node-js-y-npm').then(response => 
+//console.log(`Response status ${response.status})`).catch(() => {})
+//)
+
+
+const linkValidation = (content, inputPath) => {
+  let arr = findLinks (content, inputPath)
+  console.log(arr);
+    //for (let i = 0; i < arr.length; i++) {
+    //  const object = arr[i];
+    //  let links = axios.get(object.href)   
+    //    .then((res) => ({
+    //      href: res.config.url,
+    //      text: object.text,
+    //      file: object.file,
+    //      status: res.status,
+    //      message: 'ok',
+    //    }))
+    //    .catch((error) => {
+    //      //console.log(error)
+    //      if ('response' in error) {
+    //        return {
+    //          href: object.href,
+    //          text: object.text,
+    //          file: object.file,
+    //          status: error.response.status,
+    //          message: 'fail',
+    //        };
+    //      }
+    //    });
+    //  arrayPromises.push(links);
+    //}
+  
+    //return Promise.all(arrayPromises);
+  
+  };
+
+
+  
+  
 
 
 module.exports = {
