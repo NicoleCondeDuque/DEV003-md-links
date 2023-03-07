@@ -7,7 +7,7 @@ const {
     isItMarkdown,
     findLinks,
     readFile,
-    linkValidation
+    validatedLinks
  
   } = require('./index.js')
 
@@ -26,13 +26,11 @@ const mdLinks = (inputPath, options) => new Promise((resolve, reject) => {
             let content = readFile(inputPath);
             if (content !== '') {
                 const arrayObjects = findLinks(content, inputPath); // si encuentra archivos md, crear un arreglo de mds
-                resolve(arrayObjects)
-                
-                //if (arrayObjects !== '' && options.validate !== false ) {
-                //  resolve(linkValidation(arrayObjects));
-                //} else if (arrayObjects !== '' && options.validate !== true) {
-                //  resolve(arrayObjects);
-                //}
+                if (arrayObjects !== '' && options.validate !== false ) {
+                  resolve(validatedLinks(arrayObjects));
+            } else if (arrayObjects !== '' && options.validate !== true) {
+              resolve(arrayObjects);
+            }
               } else {
                 reject(new Error('There IS NOT links in this file'.bgRed)); // si el arreglo es vacío, rechazamos la promesa diciendo que no hay archivos md
               }
@@ -48,8 +46,8 @@ const mdLinks = (inputPath, options) => new Promise((resolve, reject) => {
       }
     });
 
-//console.log(findLinks(mdLinks('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/README2.md')).then(res => console.log(res));
-//mdLinks('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md').then(res => console.log(res));
+///console.log(findLinks(mdLinks('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/README2.md')).then(res => console.log(res));
+//mdLinks('./README2.md').then(res => console.log(res));
 
   module.exports = {
     mdLinks

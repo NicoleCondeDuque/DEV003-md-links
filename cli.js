@@ -1,7 +1,9 @@
 require('colors');
 const { mdLinks } = require ('./mdLinks.js');
+//if(process.argv.includes("--validate"))
+//console.log(process.argv)
 
-mdLinks('./README2.md'.bgCyan).then(()=> {})
+mdLinks('README2.md', { validate : true}).then(()=> {})
 .catch((error)=>{
 console.log(error)
 });
