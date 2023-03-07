@@ -1,8 +1,7 @@
 require('colors');
-const { mdLinks, isItMarkdown, isItFile } = require ('./index.js');
+const { mdLinks } = require ('./mdLinks.js');
 
-
-mdLinks('./README.md'.bgCyan).then(()=> {})
+mdLinks('./README2.md'.bgCyan).then(()=> {})
 .catch((error)=>{
 console.log(error)
 });
