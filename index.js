@@ -2,6 +2,7 @@ require('colors');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
+const { Console } = require('console');
 
 
 //carpeta o directorio
@@ -105,29 +106,29 @@ const validatedLinks = (arr , inputPath) => {
     return Promise.all(arrayPromises);
 };
 
-const fileContent = readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/pruebaDocs1/menos.md')
-const linkObjectArray = findLinks(fileContent)
-validatedLinks(linkObjectArray, '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/pruebaDocs1/menos.md').then(console.log);
+//const fileContent = readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/pruebaDocs1/menos.md')
+//const linkObjectArray = findLinks(fileContent)
+//validatedLinks(linkObjectArray, '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/pruebaDocs1/menos.md').then(console.log);
 
 
 
-//////  // TOTAL DE LINKS
+// TOTAL DE LINKS
 //const totalStats = (links) => {
 //    const totalLinks = links.length;
 //    return totalLinks;
 //  };
-////  console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
+//  console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
 
-//////  // LINKS ÚNICOS
-// const uniqueStats = (links) => {
+//// LINKS ÚNICOS
+//const uniqueStats = (links) => {
 //    const uniqueLinks = [...new Set(links.map((link) => link.href))];
 //    return uniqueLinks.length;
 // };
 // console.log(uniqueStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md')); // 3
 
-//  // LINKS ROTOS
-//  const brokenStats = (links) => {
-//    const brokenLinks = links.filter((link) => link.message === 'fail');
+// LINKS ROTOS
+//const brokenStats = (links) => {
+//   const brokenLinks = links.filter((link) => link.message === 'fail');
 //    return brokenLinks.length;
 //  };
 //console.log(brokenStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md')); // 1
@@ -144,9 +145,9 @@ module.exports = {
     isItMarkdown,
     readFile,
     findLinks,
-    //   totalStats,
-    //   uniqueStats,
-    //   brokenStats,
+    //totalStats,
+    //uniqueStats,
+    //brokenStats,
     validatedLinks
 
 };
