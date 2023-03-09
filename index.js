@@ -52,7 +52,6 @@ const returnOnlyFilesMd = (inputPath) => {
     return arrayForFiles(inputPath).filter((file => path.extname(file) === '.md'));
 };
 
-
 //---------------------------Leer el archivo .md
 const readFile = (inputPath) => fs.readFileSync(inputPath, 'utf8');
 //console.log(readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/mas.md'));
@@ -115,28 +114,28 @@ const validatedLinks = (arr , inputPath) => {
 //TOTAL DE LINKS
 const totalStats = (links) => {
     const totalLinks = links.length;
-    return `Cantidad de links unicos: ${links.length}`.bgBlue;
+    return links.length;
   };
 //  console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
 
 ////// LINKS ÚNICOS
 const uniqueStats = (links) => {
     const uniqueLinks = [...new Set(links.map((link) => link.href))];
-    return `Cantidad de links unicos: ${uniqueLinks.length}`.bgWhite;
+    return uniqueLinks.length;
  };
-// console.log(uniqueStats([{
-//    href: 'https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e',
-//    text: 'Linea de comando CLI',
-//    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
-//    status: 200,
-//    message: 'ok'
+ //console.log(uniqueStats([{
+   // href: 'https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e',
+    //text: 'Linea de comando CLI',
+    //file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
+   //status: 200,
+    //message: 'ok'
 //  }
-//])); // 
+//])); 
 
 // LINKS ROTOS
 const brokenStats = (links) => {
    const brokenLinks = links.filter((link) => link.message === 'fail');
-    return `Cantidad de links rotos: ${brokenLinks.length}`.bgRed;
+    return brokenLinks.length;
   };
 //console.log(brokenStats([{
 //    href: 'https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback',

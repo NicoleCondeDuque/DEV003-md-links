@@ -10,7 +10,6 @@ const {
     validatedLinks,
     uniqueStats,
     brokenStats,
-   
 
  
   } = require('./index.js')
@@ -44,17 +43,17 @@ const mdLinks = (inputPath, options) => new Promise((resolve, reject) => {
               reject(new Error('It IS NOT an .md file'.bgRed));
             }
           } else {
-            reject('It IS NOT a file'.bgRed);
+            reject(new Error('It IS NOT a file'.bgRed));
           }
         }
       } else {
-        reject('The path DOES NOT exist'.bgRed); // si no existe la ruta, se rechaza la promesa
+        reject(new Error('The path DOES NOT exist'.bgRed)); // si no existe la ruta, se rechaza la promesa
     }
     });
 
 //console.log(findLinks(mdLinks('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/README2.md')).then(res => console.log(res));
-//mdLinks('./README2.md', {validate:false}).then(res => console.log(res));
-//mdLinks('./README2.md', {validate:true}).then(res => console.log(res));
+mdLinks('./pruebaDocs/menos.md', {validate:false}).then(res => console.log(res));
+//mdLinks('./pruebaDocs/menos.md', {validate:true}).then(res => console.log(res));
   
 module.exports = {
     mdLinks
