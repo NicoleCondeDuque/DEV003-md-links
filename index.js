@@ -117,49 +117,49 @@ const totalStats = (links) => {
     const totalLinks = links.length;
     return `Cantidad de links unicos: ${links.length}`.bgBlue;
   };
-  console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
+//  console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
 
-//// LINKS ÚNICOS
+////// LINKS ÚNICOS
 const uniqueStats = (links) => {
     const uniqueLinks = [...new Set(links.map((link) => link.href))];
     return `Cantidad de links unicos: ${uniqueLinks.length}`.bgWhite;
  };
- console.log(uniqueStats([{
-    href: 'https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e',
-    text: 'Linea de comando CLI',
-    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
-    status: 200,
-    message: 'ok'
-  }
-])); // 
+// console.log(uniqueStats([{
+//    href: 'https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e',
+//    text: 'Linea de comando CLI',
+//    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
+//    status: 200,
+//    message: 'ok'
+//  }
+//])); // 
 
 // LINKS ROTOS
 const brokenStats = (links) => {
    const brokenLinks = links.filter((link) => link.message === 'fail');
     return `Cantidad de links rotos: ${brokenLinks.length}`.bgRed;
   };
-console.log(brokenStats([{
-    href: 'https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback',
-    text: 'Leer un directorio',
-    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
-    status: 200,
-    message: 'ok'
-  },
-  {
-    href: 'https://nodejs.org/api/path.',
-    text: 'Path',
-    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
-    status: 404,
-    message: 'fail'
-  },
-  {
-    href: 'https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e',
-    text: 'Linea de comando CLI',
-    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
-    status: 200,
-    message: 'ok'
-  }
-])); // 
+//console.log(brokenStats([{
+//    href: 'https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback',
+//    text: 'Leer un directorio',
+//    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
+//    status: 200,
+//    message: 'ok'
+//  },
+//  {
+//    href: 'https://nodejs.org/api/path.',
+//    text: 'Path',
+//    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
+//    status: 404,
+//    message: 'fail'
+//  },
+//  {
+//    href: 'https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e',
+//    text: 'Linea de comando CLI',
+//    file: 'C:\\Users\\NICOLE CONDE DUQUE\\OneDrive\\Escritorio\\DEV003-md-links\\README2.md',
+//    status: 200,
+//    message: 'ok'
+//  }
+//])); // 
 
 
 
@@ -174,8 +174,8 @@ module.exports = {
     readFile,
     findLinks,
     totalStats,
-    //uniqueStats,
-    //brokenStats,
+    uniqueStats,
+    brokenStats,
     validatedLinks
 
 };

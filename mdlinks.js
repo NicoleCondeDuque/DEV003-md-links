@@ -7,7 +7,11 @@ const {
     isItMarkdown,
     findLinks,
     readFile,
-    validatedLinks
+    validatedLinks,
+    uniqueStats,
+    brokenStats,
+   
+
  
   } = require('./index.js')
 
@@ -34,17 +38,17 @@ const mdLinks = (inputPath, options) => new Promise((resolve, reject) => {
               resolve(arrayObjects);
             }
              } else {
-              reject(new Error('There IS NOT links in this file'.bgRed)); // si el arreglo es vacío, rechazamos la promesa diciendo que no hay archivos md
+              reject('There IS NOT links in this file'.bgRed); // si el arreglo es vacío, rechazamos la promesa diciendo que no hay archivos md
               }
             } else {
               reject(new Error('It IS NOT an .md file'.bgRed));
             }
           } else {
-            reject(new Error('It IS NOT a file'.bgRed));
+            reject('It IS NOT a file'.bgRed);
           }
         }
       } else {
-        reject(new Error('The path DOES NOT exist'.bgRed)); // si no existe la ruta, se rechaza la promesa
+        reject('The path DOES NOT exist'.bgRed); // si no existe la ruta, se rechaza la promesa
     }
     });
 
