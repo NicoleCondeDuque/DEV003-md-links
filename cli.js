@@ -1,13 +1,10 @@
-
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-plusplus */
 require('colors');
 const {
    totalStats, uniqueStats, brokenStats,
 } = require('./index.js');
 const { mdLinks, } = require ('./mdLinks.js');
 
-// const args = process.argv;
+
 const path = process.argv[2];
 const config = process.argv.slice(2);
 const stats = config.includes('--stats') || config.includes('--s');
@@ -16,10 +13,32 @@ const valid = config.includes('--validate') || config.includes('--v');
 // console.log(path);
 // console.log(config);
 
+if (path === undefined) {
+    console.log(`                            
+    
+    █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+    █                                                                                                        █
+    █                            Hola! Bienvenido a tu libreia Markdown!                                     █
+    █                                                                                                        █
+    █                                                                                                        █
+    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀`.blue);
+    console.log(`
+    █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+    █                                                                                                        █
+    █                            Introduce tu Path o ruta para analizarla:                                   █
+    █      y luego escribe:                                                                                  █
+    █    --validate : SI QUIERES VALIDAR QUE LOS LINKS QUE ENCONTRAMOS FUNCIONAN O NO                        █
+    █    --stats : SI DESEA RECIBIR UNA SALIDA CON UN TEXTO CON ESTADÍSTICAS BÁSICAS SOBRE LOS ENLACES       █
+    █    --validate --stats: SI DESEA OBTENER ESTADÍSTICAS QUE REQUIERAN RESULTADOS DE VALIDACIÓN            █
+    █                                                                                                        █
+    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+    `.white);
+  }
+
 if (valid && !stats) {
   mdLinks(path, { validate: valid }).then((links) => {
-    console.log(`\n
-                                          LINKS VALIDATION`.bgBlue);
+    console.log(`\n 
+                                                 LINKS VALIDATION`.bgBlue);
     for (let i = 0; i < links.length; i++) {
       const object = links[i];
       console.log(`
@@ -59,9 +78,9 @@ if (valid && !stats) {
           
     ██ ██ 
           
-    Add after your path: 
-    ${'--validate :'.bgBlue} IF YOU WANT TO VALIDATE IF THE LINKS THAT WERE FOUND WORK OR NOT
-    ${'--stats :'.bgBlue} IF YOU WANT TO RECEIVE AN OUTPUT WITH A TEXT CONTAINING BASIC STATISTICS ABOUT THE LINKS
-    ${'--validate --stats :'.bgBlue} IF YOU WANT TO OBTANIN STATISTICS THAT REQUIRE THE VALIDATION RESULTS `.blue);
+    *AGREAGA DESPUES DEL PATH/RUTA: 
+    ${'--validate :'.magenta} SI QUIERES VALIDAR QUE LOS LINKS QUE ENCONTRAMOS FUNCIONAN O NO 
+    ${'--stats :'.magenta} SI DESEA RECIBIR UNA SALIDA CON UN TEXTO CON ESTADÍSTICAS BÁSICAS SOBRE LOS ENLACES
+    ${'--validate --stats :'.magenta} SI DESEA OBTENER ESTADÍSTICAS QUE REQUIERAN RESULTADOS DE VALIDACIÓN `.blue);
   }).catch((error) => { console.log(error); });
 }

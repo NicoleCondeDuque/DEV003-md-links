@@ -52,7 +52,7 @@ const mdLinks = (inputPath, options) => new Promise((resolve, reject) => {
     });
 
 //console.log(findLinks(mdLinks('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/README2.md')).then(res => console.log(res));
-mdLinks('./pruebaDocs/menos.md', {validate:false}).then(res => console.log(res));
+//mdLinks('./pruebaDocs/menos.md', {validate:false}).then(res => console.log(res));
 //mdLinks('./pruebaDocs/menos.md', {validate:true}).then(res => console.log(res));
   
 module.exports = {
