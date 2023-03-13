@@ -31,7 +31,7 @@ _`md-links`_ es una librería desarrollada usando Nodejs que permite leer y anal
 ## 3. Diagrama de flujo
 Se elaboró un diagrama de flujo para organizar la ruta de desarrollo de este proyecto.
 
-![diagrama](https://i.postimg.cc/wBwYJvjz/Diagramma-senza-titolo-drawio-1.png)
+[![Diagramma-senza-titolo-drawio-1.png](https://i.postimg.cc/gjhcbBCr/Diagramma-senza-titolo-drawio-1.png)](https://postimg.cc/bSzfQLNj)
 
 ## 4. Instalación
 
@@ -67,7 +67,6 @@ md-links prueba/EXTRA.md --stats
 ```
 md-links prueba/EXTRA.md --validate --stats
 ```
-![cuatro](https://i.postimg.cc/8P5VdSxg/Captura-de-pantalla-2023-02-01-a-las-19-37-33.png)
 
 ## 6. Errores 
 
