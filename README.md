@@ -60,12 +60,12 @@ md-links pruebaDocs/menos.md --validate
 [![validacion-links.png](https://i.postimg.cc/fLfP17Lm/validacion-links.png)](https://postimg.cc/MMXtQQ1p)
 * Si se ingresa `md-links <path-to-file> --stats`, el output (salida) será un texto con estadísticas básicas sobre los links.
 ```
-md-links prueba/EXTRA.md --stats
+md-links pruebaDocs/menos.md --stats
 ```
 [![stats-links.png](https://i.postimg.cc/fT9cLzcg/stats-links.png)](https://postimg.cc/yk7gpzrF)
 * Si se ingresa `md-links <path-to-file> --stats --validate` o `md-links <path-to-file> --validate --stats` , obtendremos estadísticas que necesiten de los resultados de la validación.
 ```
-md-links prueba/EXTRA.md --validate --stats
+md-links pruebaDocs/menos.md --validate --stats
 ```
 [![validacion-y-status-links2.png](https://i.postimg.cc/7Z4B7sN4/validacion-y-status-links2.png)](https://postimg.cc/w7WcYkP4)
 
