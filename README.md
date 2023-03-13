@@ -44,7 +44,7 @@ El ejecutable de esta aplicación se puede ejecutar de la siguiente manera a tra
 ```
 md-links
 ```
-[![bienvenida.png](https://i.postimg.cc/XYD4zbh4/bienvenida.png)](https://postimg.cc/G4YW4Zd5)
+[![bienvenida1.png](https://i.postimg.cc/gJn0cKXF/bienvenida1.png)](https://postimg.cc/1n1SJwrJ)
 
 * Si se ingresa `md-links <path-to-file>`, no se valida si las URLs responden ok o no, solo identifica el archivo markdown (a partir de la ruta que recibe como argumento), analiza el archivo Markdown e imprime los links que vaya encontrando, junto con la ruta del archivo donde aparece y el texto que hay dentro del link.
 
