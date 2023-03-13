@@ -8,9 +8,6 @@ const {
     findLinks,
     readFile,
     validatedLinks,
-    uniqueStats,
-    brokenStats,
-
  
   } = require('./index.js')
 

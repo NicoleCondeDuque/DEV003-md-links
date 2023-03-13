@@ -1,12 +1,8 @@
-require('colors');
+
+require('colors')
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
-const { Console } = require('console');
-
-
-//carpeta o directorio
-//archivo o file esta dentro de el directorio
 
 
 //-----------------------Identificar si la ruta existe
@@ -74,7 +70,7 @@ const findLinks = (content, inputPath) => {
 
 
 //console.log(findLinks(readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/README2.md'), '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/README2.md'));
-// console.log(findLinks('README.md'));
+//console.log(findLinks('README.md'));
 
 const validatedLinks = (arr , inputPath) => {
     let arrayPromises = [];
@@ -104,19 +100,16 @@ const validatedLinks = (arr , inputPath) => {
     }
     return Promise.all(arrayPromises);
 };
-
-//const fileContent = readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/pruebaDocs1/menos.md')
+//const fileContent = readFile('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/menos.md')
 //const linkObjectArray = findLinks(fileContent)
-//validatedLinks(linkObjectArray, '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/pruebaDocs1/menos.md').then(console.log);
-
-
+//validatedLinks(linkObjectArray, '/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs/menos.md').then(console.log);
 
 //TOTAL DE LINKS
 const totalStats = (links) => {
-    const totalLinks = links.length;
+    //const totalLinks = links.length;
     return links.length;
   };
-//  console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
+ //console.log(totalStats('/Users/NICOLE CONDE DUQUE/OneDrive/Escritorio/DEV003-md-links/pruebaDocs')); // 4
 
 ////// LINKS ÚNICOS
 const uniqueStats = (links) => {

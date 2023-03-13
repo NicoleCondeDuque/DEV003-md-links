@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 require('colors');
 const {
    totalStats, uniqueStats, brokenStats,
@@ -37,8 +38,7 @@ if (path === undefined) {
 
 if (valid && !stats) {
   mdLinks(path, { validate: valid }).then((links) => {
-    console.log(`\n 
-                                                 LINKS VALIDATION`.bgBlue);
+    console.log(`                                              VALIDACION DE LINKS                                      `.bgBlue);
     for (let i = 0; i < links.length; i++) {
       const object = links[i];
       console.log(`
@@ -61,9 +61,7 @@ if (valid && !stats) {
   }).catch((error) => { console.log(error); });
 } else if (!valid && !stats && path !== undefined) {
   mdLinks(path, { validate: valid }).then((links) => {
-    console.log(`\n                               
-                                            THE FOLLOWING LINKS WERE FOUND`
-      .bgBlue);
+    console.log(    `                            SEGUIMIENTO DE LINKS ENCONTRADOS                                               ` .bgBlue);
     for (let i = 0; i < links.length; i++) {
       const object = links[i];
       console.log(`
