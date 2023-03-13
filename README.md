@@ -67,7 +67,7 @@ md-links prueba/EXTRA.md --stats
 ```
 md-links prueba/EXTRA.md --validate --stats
 ```
-[![validacion-y-status-links.png](https://i.postimg.cc/NFdY1vvy/validacion-y-status-links.png)](https://postimg.cc/SYYwh5sq)
+[![validacion-y-status-links2.png](https://i.postimg.cc/7Z4B7sN4/validacion-y-status-links2.png)](https://postimg.cc/w7WcYkP4)
 
 ## 6. Errores 
 
