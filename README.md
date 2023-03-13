@@ -44,43 +44,44 @@ El ejecutable de esta aplicación se puede ejecutar de la siguiente manera a tra
 ```
 md-links
 ```
-![welcome](https://i.postimg.cc/1t1YYV5w/bienvenida.png)
+[![bienvenida.png](https://i.postimg.cc/XYD4zbh4/bienvenida.png)](https://postimg.cc/G4YW4Zd5)
 
 * Si se ingresa `md-links <path-to-file>`, no se valida si las URLs responden ok o no, solo identifica el archivo markdown (a partir de la ruta que recibe como argumento), analiza el archivo Markdown e imprime los links que vaya encontrando, junto con la ruta del archivo donde aparece y el texto que hay dentro del link.
 
 ```
 md-links pruebaDocs/menos.md 
 ```
-![uno](https://i.postimg.cc/43s9LJRn/validacion-links.png)
+[![LINKS.png](https://i.postimg.cc/pX4sGcZ3/LINKS.png)](https://postimg.cc/9rPPzpsB)
 
 * Si se ingresa `md-links <path-to-file> --validate`, el módulo hace una petición HTTP para averiguar si el link funciona o no. Si el link resulta en una redirección a una URL que responde ok, entonces consideraremos el link como ok.
 ```
 md-links pruebaDocs/menos.md --validate
 ```
-![dos](https://i.postimg.cc/NGSdjPHb/stats-links.png)
+[![validacion-links.png](https://i.postimg.cc/fLfP17Lm/validacion-links.png)](https://postimg.cc/MMXtQQ1p)
 * Si se ingresa `md-links <path-to-file> --stats`, el output (salida) será un texto con estadísticas básicas sobre los links.
 ```
 md-links prueba/EXTRA.md --stats
 ```
-![tres](https://i.postimg.cc/NFdY1vvy/validacion-y-status-links.png)
+[![stats-links.png](https://i.postimg.cc/fT9cLzcg/stats-links.png)](https://postimg.cc/yk7gpzrF)
 * Si se ingresa `md-links <path-to-file> --stats --validate` o `md-links <path-to-file> --validate --stats` , obtendremos estadísticas que necesiten de los resultados de la validación.
 ```
 md-links prueba/EXTRA.md --validate --stats
 ```
+[![validacion-y-status-links.png](https://i.postimg.cc/NFdY1vvy/validacion-y-status-links.png)](https://postimg.cc/SYYwh5sq)
 
 ## 6. Errores 
 
 * Al ingresar un path que no existe
-![err1](https://i.postimg.cc/8P0gtYVJ/Captura-de-pantalla-2023-02-01-a-las-19-42-25.png)
+
 
 * Al ingresar un path que no es un archivo
-![err2](https://i.postimg.cc/90XHn5MT/Captura-de-pantalla-2023-02-02-a-las-01-08-45.png)
+
 
 * Al ingresar un path que no es un archivo con extensión .md
-![err3](https://i.postimg.cc/Xq26MHGP/Captura-de-pantalla-2023-02-01-a-las-19-42-35.png)
+
 
 * Cuando se identifica que el archivo .md ingresado no contiene links
-![err4](https://i.postimg.cc/HxT8Lnny/Captura-de-pantalla-2023-02-02-a-las-01-11-06.png)
+
 
 
 
