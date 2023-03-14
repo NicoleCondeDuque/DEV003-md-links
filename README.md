@@ -26,7 +26,7 @@ la información que se quiere compartir.
 
 ## 2. Acerca de este proyecto
 
-_`md-links`_ es una librería desarrollada usando Nodejs que permite leer y analizar archivos en formato `Markdown`, para verificar los links que contengan y reportar algunas estadísticas.
+_`node cli.js`_ es una librería desarrollada usando Nodejs que permite leer y analizar archivos en formato `Markdown`, para verificar los links que contengan y reportar algunas estadísticas.
 
 ## 3. Diagrama de flujo
 Se elaboró un diagrama de flujo para organizar la ruta de desarrollo de este proyecto.
@@ -40,9 +40,9 @@ Se elaboró un diagrama de flujo para organizar la ruta de desarrollo de este pr
 El ejecutable de esta aplicación se puede ejecutar de la siguiente manera a través de la terminal: 
 node cli.js <path-to-file> [options]`
 
-* Si solo se ingresa `md-links`, recibimos un mensaje de bienvenida y la información detallada acerca de los comandos
+* Si solo se ingresa `node cli.js`, recibimos un mensaje de bienvenida y la información detallada acerca de los comandos
 ```
-NODE CLI
+              NODE CLI.JS
 ```
 [![bienvenida1.png](https://i.postimg.cc/gJn0cKXF/bienvenida1.png)](https://postimg.cc/1n1SJwrJ)
 
