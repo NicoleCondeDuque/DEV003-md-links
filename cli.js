@@ -3,13 +3,13 @@ require('colors');
 const {
    totalStats, uniqueStats, brokenStats,
 } = require('./index.js');
-const { mdLinks, } = require ('./mdLinks.js');
+const { mdLinks, } = require ('./mdlinks.js');
 
 
 const path = process.argv[2];
 const config = process.argv.slice(2);
-const stats = config.includes('--stats') || config.includes('--s');
-const valid = config.includes('--validate') || config.includes('--v');
+const stats = config.includes('--stats') ;
+const valid = config.includes('--validate') ;
 // console.log(args);
 // console.log(path);
 // console.log(config);

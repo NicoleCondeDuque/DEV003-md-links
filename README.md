@@ -38,34 +38,32 @@ Se elaboró un diagrama de flujo para organizar la ruta de desarrollo de este pr
 
 ## 5. Comandos
 El ejecutable de esta aplicación se puede ejecutar de la siguiente manera a través de la terminal: 
-`md-links <path-to-file> [options]`
+node cli.js <path-to-file> [options]`
 
 * Si solo se ingresa `md-links`, recibimos un mensaje de bienvenida y la información detallada acerca de los comandos
 ```
-md-links
+NODE CLI
 ```
 [![bienvenida1.png](https://i.postimg.cc/gJn0cKXF/bienvenida1.png)](https://postimg.cc/1n1SJwrJ)
 
-* Si se ingresa `md-links <path-to-file>`, no se valida si las URLs responden ok o no, solo identifica el archivo markdown (a partir de la ruta que recibe como argumento), analiza el archivo Markdown e imprime los links que vaya encontrando, junto con la ruta del archivo donde aparece y el texto que hay dentro del link.
+* Si se ingresa node cli.js <path-to-file>`, no se valida si las URLs responden ok o no, solo identifica el archivo markdown (a partir de la ruta que recibe como argumento), analiza el archivo Markdown e imprime los links que vaya encontrando, junto con la ruta del archivo donde aparece y el texto que hay dentro del link.
 
 ```
-md-links pruebaDocs/menos.md 
+node cli.js pruebaDocs/menos.md 
 ```
 [![LINKS.png](https://i.postimg.cc/pX4sGcZ3/LINKS.png)](https://postimg.cc/9rPPzpsB)
 
-* Si se ingresa `md-links <path-to-file> --validate`, el módulo hace una petición HTTP para averiguar si el link funciona o no. Si el link resulta en una redirección a una URL que responde ok, entonces consideraremos el link como ok.
-```
-md-links pruebaDocs/menos.md --validate
+* Si se ingresa node cli.js <path-to-file> --validate`, el módulo hace una petición HTTP para averiguar si el link funciona o no. Si el link resulta en una redirección a una URL que responde ok, entonces consideraremos el link como ok.
+
+```node cli.js pruebaDocs/menos.md --validate
 ```
 [![validacion-links.png](https://i.postimg.cc/fLfP17Lm/validacion-links.png)](https://postimg.cc/MMXtQQ1p)
-* Si se ingresa `md-links <path-to-file> --stats`, el output (salida) será un texto con estadísticas básicas sobre los links.
-```
-md-links pruebaDocs/menos.md --stats
+* Si se ingresa node cli.js <path-to-file> --stats`, el output (salida) será un texto con estadísticas básicas sobre los links.
+```node cli.js pruebaDocs/menos.md --stats
 ```
 [![stats-links.png](https://i.postimg.cc/fT9cLzcg/stats-links.png)](https://postimg.cc/yk7gpzrF)
-* Si se ingresa `md-links <path-to-file> --stats --validate` o `md-links <path-to-file> --validate --stats` , obtendremos estadísticas que necesiten de los resultados de la validación.
-```
-md-links pruebaDocs/menos.md --validate --stats
+* Si se ingresa node cli.js <path-to-file> --stats --validate` o node cli.js <path-to-file> --validate --stats` , obtendremos estadísticas que necesiten de los resultados de la validación.
+```node cli.js pruebaDocs/menos.md --validate --stats
 ```
 [![validacion-y-status-links2.png](https://i.postimg.cc/7Z4B7sN4/validacion-y-status-links2.png)](https://postimg.cc/w7WcYkP4)
 
