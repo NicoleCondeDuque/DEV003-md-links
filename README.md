@@ -26,7 +26,7 @@ la información que se quiere compartir.
 
 ## 2. Acerca de este proyecto
 
-_`node cli.js`_ es una librería desarrollada usando Nodejs que permite leer y analizar archivos en formato `Markdown`, para verificar los links que contengan y reportar algunas estadísticas.
+_`mdlinks-run`_ es una librería desarrollada usando Nodejs que permite leer y analizar archivos en formato `Markdown`, para verificar los links que contengan y reportar algunas estadísticas.
 
 ## 3. Diagrama de flujo
 Se elaboró un diagrama de flujo para organizar la ruta de desarrollo de este proyecto.
@@ -35,6 +35,7 @@ Se elaboró un diagrama de flujo para organizar la ruta de desarrollo de este pr
 
 ## 4. Instalación
 
+Ejecutando el comando  _`npm i mdlinks-run`_ podras descargar el paquete de la libreria y ejecutando los siguientes comando podras usarlo:
 
 ## 5. Comandos
 El ejecutable de esta aplicación se puede ejecutar de la siguiente manera a través de la terminal: 
@@ -69,16 +70,14 @@ node cli.js pruebaDocs/menos.md
 
 ## 6. Errores 
 
+Retornara los siguientes errores al no cumplir con los parametros:
+
 * Al ingresar un path que no existe
-
-
-* Al ingresar un path que no es un archivo
-
-
+`Error: The path DOES NOT exist`
 * Al ingresar un path que no es un archivo con extensión .md
+`Error: It IS NOT an .md file`
 
 
-* Cuando se identifica que el archivo .md ingresado no contiene links
 
 
 

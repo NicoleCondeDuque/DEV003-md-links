@@ -1,5 +1,5 @@
 {
-    "name": "md-links",
+    "name": "mdlinks-run",
     "version": "0.1.0",
     "engines": {
       "node": ">=16.x"
@@ -10,7 +10,7 @@
       "commit": "a63a770ea33332882790401851df337734b0b734"
     },
     "bin": {
-        "md-links": "./cli.js"
+        "md-links": "cli.js"
     },
     "description": "librería desarrollada con Node.js para validar links de archivos markdown",
     "main": "index.js",
