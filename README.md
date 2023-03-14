@@ -1,3 +1,5 @@
+
+[![Verde-Ne-n-y-Morado-Informal-Profesional-Aplicaci-n-de-Mensajer-a-Lluvia-de-Ideas-Presentaci-n-1.png](https://i.postimg.cc/qvssTzM4/Verde-Ne-n-y-Morado-Informal-Profesional-Aplicaci-n-de-Mensajer-a-Lluvia-de-Ideas-Presentaci-n-1.png)](https://postimg.cc/4Y37v49S)
 # Markdown Links
 
 ## Índice
